@@ -1,0 +1,6 @@
+{
+  "api.genericError": "An API error has occurred",
+  "404Page.title": "404: Page Not Found",
+  "errorPage.errorDetails": "Error Details:",
+  "errorPage.title": "Something went wrong"
+}
