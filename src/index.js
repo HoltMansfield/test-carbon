@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import 'sass/index.scss'
 import { FoundationApp } from './components/app/FoundationApp'
 import { store } from './redux/create-store'
 import { SubstateProvider } from 'use-substate'
