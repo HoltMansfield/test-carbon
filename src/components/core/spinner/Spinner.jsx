@@ -1,5 +1,4 @@
 import React from 'react'
-import CircularProgress from '@material-ui/core/CircularProgress'
 import { FadeIn } from 'animate-css-styled-components'
 import Flex from 'flexbox-react'
 import { useSpinner } from 'hooks/core/use-spinner/useSpinner'
@@ -17,7 +16,7 @@ export function Spinner () {
     <FixedPosition>
       <Flex flexGrow={1} justifyContent="center" marginTop="50px">
         <FadeIn>
-          <CircularProgress size={80} />
+          <div>SPINNER HERE</div>
         </FadeIn>
       </Flex>
     </FixedPosition>
