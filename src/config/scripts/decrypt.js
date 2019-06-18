@@ -3,7 +3,7 @@ const nodecipher = require('node-cipher');
 const separator = process.platform === 'win32' ? '\\' : '/'
 
 const encrypt = (reactAppEnv) => {
-  const clearTextPath = `${process.cwd()}${separator}src${separator}config${separator}secure${separator}${reactAppEnv}.js`
+  const clearTextPath = `${process.cwd()}${separator}src${separator}config${separator}secure${separator}decrypted${separator}${reactAppEnv}.js`
   const secureTextPath = `${process.cwd()}${separator}src${separator}config${separator}secure${separator}${reactAppEnv}.encrypted`
 
   nodecipher.decrypt({
