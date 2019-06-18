@@ -6,6 +6,7 @@ import { RouteTable } from '../routes/RouteTable'
 import { AppBar } from './app-bar/AppBar'
 import { SideMenu } from './side-menu/SideMenu'
 import { MobileSideMenu } from './mobile-side-menu/MobileSideMenu'
+import { DesktopSideMenu } from './desktop-side-menu/DesktopSideMenu'
 import { useScreenSizes } from 'hooks/core/use-screen-sizes/useScreenSizes'
 import { useShowSideMenu } from 'hooks/redux/foundation/use-show-side-menu/useShowSideMenu'
 
@@ -49,7 +50,7 @@ export function App () {
           <AppBar />
         </Flex>
         <Flex flexGrow={1}>
-          <Flex width="200px">
+          <Flex width="300px" style={{ borderRight: 'solid 1px black'}}>
             <SideMenu />
           </Flex>
           <Flex flexGrow={1}>
@@ -61,12 +62,15 @@ export function App () {
   }
 
   return (
-    <Flex flexDirection="column" flexGrow={1}>
+    <Flex flexGrow={1} flexDirection="column" minHeight="100vh">
       <Flex>
         <AppBar />
       </Flex>
       <Flex>
-        <RouteTable />
+        <Flex flexDirection="column">
+          <Flex><DesktopSideMenu /></Flex>
+          <Flex><RouteTable /></Flex>
+        </Flex>
       </Flex>
     </Flex>
   )

@@ -29,14 +29,6 @@ export const setShowOverlay = newOverlayState => (
   }
 )
 
-// set modalState to either an empty string or the name of the modal to display
-export const setModalState = newModalState => (
-  {
-    type: 'SET_MODAL_STATE',
-    newModalState
-  }
-)
-
 export const setShowSideMenu = showSideMenu => (
   {
     type: 'SET_SHOW_SIDE_MENU',

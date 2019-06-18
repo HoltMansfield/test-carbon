@@ -36,15 +36,6 @@ test('setShowOverlay should create SET_SHOW_OVERLAY action', () => {
   })
 })
 
-test('setModalState should create SET_MODAL_STATE action', () => {
-  const expected = 'Please wait...'
-
-  expect(actions.foundation.setModalState(expected)).toEqual({
-    type: 'SET_MODAL_STATE',
-    newModalState: expected,
-  })
-})
-
 test('should create the expected setShowSideMenu action', () => {
   const expectedValue = {}
   const expectedAction = {
