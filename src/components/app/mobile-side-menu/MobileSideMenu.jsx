@@ -13,7 +13,6 @@ export function MobileSideMenu () {
         <Flex><SideMenu /></Flex>
         <Flex flexGrow={1}
           minHeight="100vh"
-          style={{ backgroundColor: 'black', opacity: 0.3 }}
           onClick={() => setShowSideMenu(false)}>
         </Flex>
       </Flex>
