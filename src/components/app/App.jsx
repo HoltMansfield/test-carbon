@@ -15,8 +15,9 @@ export function App () {
   const { isDevice, isLargeDesktop } = useScreenSizes()
 
   const onSwipeMove = (position, event) => {
+    // might consider switching to onSwipeRight if this is stable and make the menu more ambient
     const swipeEnd = event.changedTouches[0].clientX
-    if(swipeEnd > 15 && !showSideMenu) {
+    if(swipeEnd < 15 && !showSideMenu) {
       setShowSideMenu(true)
     }
   }
