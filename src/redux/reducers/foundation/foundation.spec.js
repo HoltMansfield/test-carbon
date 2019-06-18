@@ -63,3 +63,17 @@ test('should set modalState to new value', () => {
   expect(foundation(undefined, actions.foundation.setModalState(newModalState)))
     .toEqual(expectedState)
 })
+
+test('should set showSideMenu to new value', () => {
+  const newValue = 'new-value'
+  const expectedState = {
+    ...initialState,
+    showSideMenu: newValue
+  }
+  // create an action
+  const action = actions.foundation.setShowSideMenu(newValue)
+  // test the reducer with an action and an inital state
+  const updatedState = foundation(initialState, action)
+  // confirm that state was correctly updated
+  expect(updatedState).toEqual(expectedState)
+})

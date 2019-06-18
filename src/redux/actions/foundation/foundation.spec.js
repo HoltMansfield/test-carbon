@@ -44,3 +44,16 @@ test('setModalState should create SET_MODAL_STATE action', () => {
     newModalState: expected,
   })
 })
+
+test('should create the expected setShowSideMenu action', () => {
+  const expectedValue = {}
+  const expectedAction = {
+    type: 'SET_SHOW_SIDE_MENU',
+    showSideMenu: expectedValue
+  }
+  // execute our action creator
+  const action = actions.foundation.setShowSideMenu(expectedValue)
+
+  // assert that our action creator creates the expected action
+  expect(action).toEqual(expectedAction)
+})

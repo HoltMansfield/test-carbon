@@ -34,6 +34,9 @@ const foundation = (state = initialState, action) =>
       case 'SET_MODAL_STATE':
         draft.modalState = action.newModalState
         return
+      case 'SET_SHOW_SIDE_MENU':
+        draft.showSideMenu = action.showSideMenu
+        return
     }
   })
 

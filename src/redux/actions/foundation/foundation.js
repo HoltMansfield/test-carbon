@@ -36,3 +36,10 @@ export const setModalState = newModalState => (
     newModalState
   }
 )
+
+export const setShowSideMenu = showSideMenu => (
+  {
+    type: 'SET_SHOW_SIDE_MENU',
+    showSideMenu
+  }
+)
