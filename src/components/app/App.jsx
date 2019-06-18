@@ -1,33 +1,43 @@
 import React from 'react'
 import Flex from 'flexbox-react'
+import Swipe from 'react-easy-swipe'
+import { OffCanvas, OffCanvasBody, OffCanvasMenu } from 'react-offcanvas'
 import { RouteTable } from '../routes/RouteTable'
 import { AppBar } from './app-bar/AppBar'
 import { SideMenu } from './side-menu/SideMenu'
+import { MobileSideMenu } from './mobile-side-menu/MobileSideMenu'
 import { useScreenSizes } from 'hooks/core/use-screen-sizes/useScreenSizes'
 import { useShowSideMenu } from 'hooks/redux/foundation/use-show-side-menu/useShowSideMenu'
-
-
-import Swipe from 'react-easy-swipe'
 
 
 export function App () {
   const { showSideMenu, setShowSideMenu } = useShowSideMenu()
   const { isDevice, isLargeDesktop } = useScreenSizes()
 
-  const onSwipeMove = (position, event) => {
-    // might consider switching to onSwipeRight if this is stable and make the menu more ambient
-    const swipeEnd = event.changedTouches[0].clientX
-    if(swipeEnd < 15 && !showSideMenu) {
-      setShowSideMenu(true)
-    }
-  }
-
   if (isDevice) {
     return (
-      <Swipe onSwipeMove={onSwipeMove}>
-        <Flex flexGrow={1} flexDirection="column" minHeight="100vh">
-          <RouteTable />
-        </Flex>
+      <Swipe onSwipeRight={() => setShowSideMenu(true)} onSwipeLeft={() => setShowSideMenu(false)}>
+        <OffCanvas
+          width={document.body.clientWidth}
+          transitionDuration={300}
+          isMenuOpened={showSideMenu}
+          position={"left"}
+          effect={"overlay"}
+        >
+          <OffCanvasBody>
+            <Flex flexGrow={1} flexDirection="column" minHeight="100vh">
+              <Flex>
+                <AppBar />
+              </Flex>
+              <Flex>
+                <RouteTable />
+              </Flex>
+            </Flex>
+          </OffCanvasBody>
+          <OffCanvasMenu>
+            <MobileSideMenu />
+          </OffCanvasMenu>
+        </OffCanvas>
       </Swipe>
     )
   }
