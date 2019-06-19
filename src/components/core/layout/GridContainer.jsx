@@ -7,11 +7,9 @@ export const FullWidthGrid = styled(Grid)`
   flexGrow: 1;
 `
 
-export function GridContainer ({ children, spacing }) {
-  const gridSpacing = spacing || 3
-
+export function GridContainer ({ children }) {
   return (
-    <FullWidthGrid container spacing={gridSpacing}>
+    <FullWidthGrid container spacing={0}>
       {children}
     </FullWidthGrid>
   )

@@ -1,2 +1,2 @@
-This component merely wraps the SideMenu component and includes a shadow on the right hand Side
-Clicking on the shadow will hide the menu
+This component merely wraps the SideMenu component
+It also includes a div on the right hand side that when clicked will close the menu
