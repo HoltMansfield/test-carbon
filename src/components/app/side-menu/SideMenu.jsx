@@ -1,7 +1,7 @@
 /* eslint no-script-url: "off" */
 import React from 'react'
-import Flex from 'flexbox-react'
 import { SideNav, SideNavMenu, SideNavItems, SideNavMenuItem } from 'carbon-components-react'
+import Document from '@carbon/icons-react/es/document/16'
 import { useShowSideMenu } from 'hooks/redux/foundation/use-show-side-menu/useShowSideMenu'
 import { useRouter } from 'hooks/core/use-router/useRouter'
 
@@ -15,6 +15,18 @@ export function SideMenu () {
     setShowSideMenu(false)
   }
 
+  const getAriaCurrent = (url) => {
+    if(history.location.pathname === url) {
+      return 'page'
+    }
+
+    return 'false'
+  }
+
+  const getActiveStateForMenu = (string) => {
+    return history.location.pathname.includes(string)
+  }
+
   return (
       <SideNav
         isFixedNav
@@ -23,15 +35,15 @@ export function SideMenu () {
         aria-label="Side navigation"
         >
         <SideNavItems>
-          <SideNavMenu title="Policies">
-            <SideNavMenuItem href="javascript:void(0)" onClick={() => navigate('/find-policy')}>
+          <SideNavMenu title="Policies" isActive={getActiveStateForMenu('policy')} renderIcon={Document}>
+            <SideNavMenuItem aria-current={getAriaCurrent('/find-policy')} onClick={() => navigate('/find-policy')} href="javascript:void(0)">
               Find Policy
             </SideNavMenuItem>
-            <SideNavMenuItem aria-current="page" href="javascript:void(0)" onClick={() => navigate('/create-policy')}>
+            <SideNavMenuItem aria-current={getAriaCurrent('/create-policy')} onClick={() => navigate('/create-policy')} href="javascript:void(0)">
               Create Policy
             </SideNavMenuItem>
-            <SideNavMenuItem href="javascript:void(0)" onClick={() => navigate('/create-policy-from-profile')}>
-              Create Policy From Profile
+            <SideNavMenuItem aria-current={getAriaCurrent('/create-policy-from-profile')} onClick={() => navigate('/create-policy-from-profile')} href="javascript:void(0)">
+              <div style={{ fontSize: '0.9em' }}>Create Policy From Profile</div>
             </SideNavMenuItem>
           </SideNavMenu>
         </SideNavItems>
