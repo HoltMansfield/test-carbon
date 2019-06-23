@@ -11,7 +11,21 @@ export const useForms = () => {
     }
   }
 
+  const getErrors = (fieldName, errors, touched) => {
+    if (errors[fieldName] && touched[fieldName]) {
+      return errors[fieldName]
+    }
+
+    return null
+  }
+
+  const hasErrors = (fieldName, errors, touched) => {
+    return getErrors(fieldName, errors, touched) !== null
+  }
+
   return {
-    formIsValid
+    formIsValid,
+    getErrors,
+    hasErrors
   }
 }
