@@ -54,7 +54,7 @@ export const useHttp = (url, _options) => {
       setTimeout(() => {
         setShowOverlay(false)
         setShowSpinner(false)
-      }, 2000)
+      }, 300)
     }
   }
 
@@ -102,9 +102,9 @@ export const useHttp = (url, _options) => {
     showSpinnerAndOverlay(options)
 
     try {
-      //const result = await axios.post(`${config.apiUrl}/${url}`, requestData)
+      const result = await axios.post(`${config.apiUrl}/${url}`, requestData)
       hideSpinnerAndOverlay(options)
-      return
+      return result.data
     } catch (error) {
       const data = {
         source: 'useHttp.post',

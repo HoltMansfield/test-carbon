@@ -1,4 +1,5 @@
 import React from 'react'
+import { Loading } from 'carbon-components-react'
 import { FadeIn } from 'animate-css-styled-components'
 import Flex from 'flexbox-react'
 import { useSpinner } from 'hooks/core/use-spinner/useSpinner'
@@ -16,7 +17,7 @@ export function Spinner () {
     <FixedPosition>
       <Flex flexGrow={1} justifyContent="center" marginTop="50px">
         <FadeIn>
-          <div>SPINNER HERE</div>
+          <Loading active={true} />
         </FadeIn>
       </Flex>
     </FixedPosition>

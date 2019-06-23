@@ -30,6 +30,7 @@ function LoginFormRaw (props) {
           id="password"
           label="Password"
           formikProps={props}
+          type="password"
         />
       </Flex>
       <Flex>

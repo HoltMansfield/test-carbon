@@ -3,6 +3,7 @@ import Loadable from 'react-loadable'
 import { RouteLoading } from 'components/core/routing/route-loading/RouteLoading'
 const FindPolicy = Loadable({ loader: () => import('./find-policy/FindPolicy'), loading: RouteLoading })
 const Login = Loadable({ loader: () => import('./login/Login'), loading: RouteLoading })
+const Home = Loadable({ loader: () => import('./home/Home'), loading: RouteLoading })
 //GeneratorToken: <next-import>
 
 export const preloadAllRoutes = () => {
@@ -10,6 +11,7 @@ export const preloadAllRoutes = () => {
   setTimeout(() => {
     FindPolicy.preload()
     Login.preload()
+    Home.preload()
     //GeneratorToken: <next-preload>
   }, 2000)
 }

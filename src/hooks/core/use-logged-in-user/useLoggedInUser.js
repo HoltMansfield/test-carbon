@@ -1,10 +1,13 @@
 import { useSubstate } from 'use-substate'
 import { useRouter } from 'hooks/core/use-router/useRouter'
+import { useLocalStorage } from 'hooks/core/use-local-storage/useLocalStorage'
 import * as actions from 'redux/actions'
 
 
 const useLoggedInUser = () => {
   const { history } = useRouter()
+  const { setItem } = useLocalStorage()
+
   const [loggedInUser, dispatch] = useSubstate(state => {
     return state.foundation.loggedInUser
   })
@@ -24,10 +27,16 @@ const useLoggedInUser = () => {
     history.push('/')
   }
 
+  const login = (user) => {
+    setItem('profile', JSON.stringify(user))
+    setLoggedInUser(user)
+  }
+
   return {
     loggedInUser,
+    setLoggedInUser,
     logout,
-    setLoggedInUser
+    login
   }
 }
 

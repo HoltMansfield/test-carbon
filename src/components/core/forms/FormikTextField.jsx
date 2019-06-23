@@ -12,18 +12,20 @@ import { ErrorMessage } from './ErrorMessage'
 */
 export function FormikTextField (props) {
   const { getErrors, hasErrors } = useForms()
-  const { id, label } = props
+  const { id, label, type } = props
   const { values, errors, touched, handleChange, handleBlur } = props.formikProps
 
   return (
     <Flex flexDirection="column" flexGrow={1} margin="10px 0">
       <TextInput
         id={id}
-        labelText={label}
+        name={id}
         value={values[id]}
+        labelText={label}
         invalid={hasErrors(id, errors, touched)}
         onChange={handleChange}
         onBlur={handleBlur}
+        type={ type || 'text' }
       />
       <Flex margin="10px">
         <ErrorMessage text={getErrors(id, errors, touched)} />
