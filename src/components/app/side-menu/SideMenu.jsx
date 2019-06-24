@@ -4,6 +4,7 @@ import { SideNav, SideNavMenu, SideNavItems, SideNavMenuItem } from 'carbon-comp
 import Document from '@carbon/icons-react/es/document/16'
 import { useShowSideMenu } from 'hooks/redux/foundation/use-show-side-menu/useShowSideMenu'
 import { useRouter } from 'hooks/core/use-router/useRouter'
+import { MenuItemText } from './styled'
 
 
 export function SideMenu () {
@@ -37,13 +38,13 @@ export function SideMenu () {
         <SideNavItems>
           <SideNavMenu title="Policies" isActive={getActiveStateForMenu('policy')} renderIcon={Document}>
             <SideNavMenuItem aria-current={getAriaCurrent('/find-policy')} onClick={() => navigate('/find-policy')} href="javascript:void(0)">
-              Find Policy
+              <MenuItemText>Find Policy</MenuItemText>
             </SideNavMenuItem>
             <SideNavMenuItem aria-current={getAriaCurrent('/create-policy')} onClick={() => navigate('/create-policy')} href="javascript:void(0)">
-              Create Policy
+              <MenuItemText>Create Policy</MenuItemText>
             </SideNavMenuItem>
             <SideNavMenuItem aria-current={getAriaCurrent('/create-policy-from-profile')} onClick={() => navigate('/create-policy-from-profile')} href="javascript:void(0)">
-              <div style={{ fontSize: '0.9em' }}>Create Policy From Profile</div>
+              <MenuItemText>Create Policy From Profile</MenuItemText>
             </SideNavMenuItem>
           </SideNavMenu>
         </SideNavItems>
