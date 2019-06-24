@@ -22,10 +22,11 @@ export default function Login () {
   // }
   const onSubmit = async (data) => {
     await serverLogin()
-    if(data.domain === 'raptors' && data.usernameName === 'test' && data.password === '1234') {
-      login({ firstName: 'Pascal', lastName: 'Siakim' })
+
+    if(data.domain === 'raptors' && data.userName === 'test' && data.password === '1234') {
       setTimeout(() => {
-        history.push('/find-policy')
+        login({ firstName: 'Pascal', lastName: 'Siakim' })
+        history.push('/')
       }, 2000)
     }
   }

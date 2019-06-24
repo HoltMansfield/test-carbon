@@ -20,8 +20,8 @@ function LoginFormRaw (props) {
       </Flex>
       <Flex>
         <FormikTextField
-          id="usernameName"
-          label="Username Name"
+          id="userName"
+          label="Username"
           formikProps={props}
         />
       </Flex>
@@ -47,7 +47,7 @@ function LoginFormRaw (props) {
 }
 const validationSchema = Yup.object().shape({
   domain: Yup.string().required('Domain is required'),
-  usernameName: Yup.string().required('Username Name is required'),
+  userName: Yup.string().required('Username is required'),
   password: Yup.string().required('Password is required'),
 })
 const formikConfig = {
@@ -57,7 +57,7 @@ const formikConfig = {
   mapPropsToValues: props => {
     return {
       domain: '',
-      usernameName: '',
+      userName: '',
       password: '',
     }
   }

@@ -4,6 +4,8 @@ import { RouteLoading } from 'components/core/routing/route-loading/RouteLoading
 const FindPolicy = Loadable({ loader: () => import('./find-policy/FindPolicy'), loading: RouteLoading })
 const Login = Loadable({ loader: () => import('./login/Login'), loading: RouteLoading })
 const Home = Loadable({ loader: () => import('./home/Home'), loading: RouteLoading })
+const CreatePolicy = Loadable({ loader: () => import('./create-policy/CreatePolicy'), loading: RouteLoading })
+const CreatePolicyFromProfile = Loadable({ loader: () => import('./create-policy-from-profile/CreatePolicyFromProfile'), loading: RouteLoading })
 //GeneratorToken: <next-import>
 
 export const preloadAllRoutes = () => {
@@ -12,6 +14,8 @@ export const preloadAllRoutes = () => {
     FindPolicy.preload()
     Login.preload()
     Home.preload()
+    CreatePolicy.preload()
+    CreatePolicyFromProfile.preload()
     //GeneratorToken: <next-preload>
   }, 2000)
 }

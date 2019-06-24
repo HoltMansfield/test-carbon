@@ -9,11 +9,8 @@ export default function FindPolicy () {
   return (
     <div className="bx--grid">
       <div className="bx--row">
-        <div className="bx--col-sm-12">
-          1
-        </div>
-        <div className="bx--col-sm-12">
-          2
+        <div className="bx--col">
+          Placeholder content for: Find Policy
         </div>
       </div>
     </div>
