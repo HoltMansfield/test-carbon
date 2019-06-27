@@ -6,6 +6,7 @@ const Login = Loadable({ loader: () => import('./login/Login'), loading: RouteLo
 const Home = Loadable({ loader: () => import('./home/Home'), loading: RouteLoading })
 const CreatePolicy = Loadable({ loader: () => import('./create-policy/CreatePolicy'), loading: RouteLoading })
 const CreatePolicyFromProfile = Loadable({ loader: () => import('./create-policy-from-profile/CreatePolicyFromProfile'), loading: RouteLoading })
+const Console = Loadable({ loader: () => import('./console/Console'), loading: RouteLoading })
 //GeneratorToken: <next-import>
 
 export const preloadAllRoutes = () => {
@@ -16,6 +17,7 @@ export const preloadAllRoutes = () => {
     Home.preload()
     CreatePolicy.preload()
     CreatePolicyFromProfile.preload()
+    Console.preload()
     //GeneratorToken: <next-preload>
   }, 2000)
 }

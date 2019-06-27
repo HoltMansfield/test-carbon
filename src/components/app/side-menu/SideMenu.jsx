@@ -47,6 +47,9 @@ export function SideMenu () {
               <MenuItemText>Create Policy From Profile</MenuItemText>
             </SideNavMenuItem>
           </SideNavMenu>
+          <SideNavMenuItem aria-current={getAriaCurrent('/console')} onClick={() => navigate('/console')} href="javascript:void(0)">
+            <MenuItemText>Console</MenuItemText>
+          </SideNavMenuItem>
         </SideNavItems>
       </SideNav>
   )

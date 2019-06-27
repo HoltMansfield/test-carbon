@@ -12,6 +12,7 @@ const Login = Loadable({ loader: () => import('./login/Login'), loading: RouteLo
 const Home = Loadable({ loader: () => import('./home/Home'), loading: RouteLoading })
 const CreatePolicy = Loadable({ loader: () => import('./create-policy/CreatePolicy'), loading: RouteLoading })
 const CreatePolicyFromProfile = Loadable({ loader: () => import('./create-policy-from-profile/CreatePolicyFromProfile'), loading: RouteLoading })
+const Console = Loadable({ loader: () => import('./console/Console'), loading: RouteLoading })
 
 
 function RouteTable () {
@@ -26,6 +27,7 @@ function RouteTable () {
       <AuthorizedRoute exact path="/find-policy" component={FindPolicy} />
       <AuthorizedRoute exact path="/create-policy" component={CreatePolicy} />
       <AuthorizedRoute exact path="/create-policy-from-profile" component={CreatePolicyFromProfile} />
+      <AuthorizedRoute exact path="/console" component={Console} />
 
       {/* 404 route must be last */}
       <AuthorizedRoute component={NotFound} />
