@@ -1,8 +1,13 @@
 import React from 'react'
 import { SideNavMenu } from 'carbon-components-react'
 import { useRBAC } from 'hooks/core/use-rbac/useRBAC'
-// import { } from './styled'
 
+/*
+    This menu has children.
+    Those children have required roles.
+    The Menu itself will only display if the loggedInUser has at leat one of the required roles
+    for at least one of the items
+*/
 
 export function SecureSideNavMenu ({ requiredRoles, title, isActive, renderIcon, children }) {
   const { hasAccess } = useRBAC()
