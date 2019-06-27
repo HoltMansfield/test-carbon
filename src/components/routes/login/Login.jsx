@@ -25,8 +25,8 @@ export default function Login () {
 
     if(data.domain === 'raptors' && data.userName === 'test' && data.password === '1234') {
       setTimeout(() => {
-        const groups = ['Admin']
-        login({ firstName: 'Pascal', lastName: 'Siakim', groups })
+        const roles = ['Admin']
+        login({ firstName: 'Pascal', lastName: 'Siakim', roles })
         history.push('/')
       }, 2000)
     }

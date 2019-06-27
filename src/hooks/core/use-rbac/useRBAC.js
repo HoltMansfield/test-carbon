@@ -18,12 +18,16 @@ export const useRBAC = () => {
     return any(userAssignedRole => userAssignedRole === requiredRole)(loggedInUser.roles)
   }
 
-  const hasRole = (requireRoles) => {
+  const hasAccess = (requireRoles) => {
+    if(!loggedInUser || !loggedInUser.roles) {
+      return false
+    }
+
     // for each required role, check if the user has at least one of these roles
     return any(checkRequiredRoles)(requireRoles)
   }
 
   return {
-    hasRole
+    hasAccess
   }
 }

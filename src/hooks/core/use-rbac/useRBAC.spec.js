@@ -22,12 +22,22 @@ afterEach(() => {
   td.reset() // resets all test doubles
 })
 
-test('hasRole returns expected value', () => {
+test('hasAccess returns true when user has required role', () => {
   // render the hook in an unseen component
   const { result } = renderHook(() => useRBAC())
 
-  const actual = result.current.hasRole([expectedRole])
+  const actual = result.current.hasAccess([expectedRole])
 
   // assert that our intial value is as expected
   expect(actual).toEqual(true)
+})
+
+test('hasAccess returns false when user DOES NOT HAVE the required role', () => {
+  // render the hook in an unseen component
+  const { result } = renderHook(() => useRBAC())
+
+  const actual = result.current.hasAccess(['Ninja'])
+
+  // assert that our intial value is as expected
+  expect(actual).toEqual(false)
 })

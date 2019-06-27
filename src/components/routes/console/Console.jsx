@@ -1,5 +1,4 @@
 import React from 'react'
-import Flex from 'flexbox-react'
 import Terminal from 'terminal-in-react'
 import { Link } from 'carbon-components-react'
 import { useHttp } from 'hooks/core/use-http/useMockHttp'

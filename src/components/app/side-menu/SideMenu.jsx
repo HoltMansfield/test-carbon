@@ -37,7 +37,7 @@ export function SideMenu () {
         aria-label="Side navigation"
         >
         <SideNavItems>
-          <SecureSideNavMenu title="Policies" isActive={getActiveStateForMenu('policy')} renderIcon={Document}>
+          <SecureSideNavMenu requiredRoles={['Admin']} title="Policies" isActive={getActiveStateForMenu('policy')} renderIcon={Document}>
             <SideNavMenuItem aria-current={getAriaCurrent('/find-policy')} onClick={() => navigate('/find-policy')} href="javascript:void(0)">
               <MenuItemText>Find Policy</MenuItemText>
             </SideNavMenuItem>
